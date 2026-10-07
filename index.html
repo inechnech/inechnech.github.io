@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Idris Nechnech">
+  <meta name="description" content="Idris Nechnech — MSc student at Seoul National University working on post-training alignment and reinforcement learning for LLMs.">
+  <title>Idris Nechnech</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Lato', Verdana, Helvetica, sans-serif;
+      font-size: 14px;
+      background: #ffffff;
+      color: #222;
+      margin: 0;
+    }
+    a { color: #1772d0; text-decoration: none; }
+    a:hover, a:focus { color: #f09228; }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+    table { width: 100%; border: 0; border-spacing: 0; border-collapse: separate; }
+    td { vertical-align: middle; }
+    .name {
+      font-size: 32px;
+      text-align: center;
+      margin: 20px 0 16px;
+    }
+    p { line-height: 1.55; margin: 0 0 12px; }
+    .links { text-align: center; }
+    .profile-cell { width: 37%; padding: 2.5%; text-align: center; }
+    .profile-cell img {
+      width: 100%;
+      max-width: 240px;
+      border-radius: 50%;
+      object-fit: cover;
+      aspect-ratio: 1 / 1;
+      background: #eee;
+    }
+    .bio-cell { width: 100%; padding: 2.5%; }
+    h2 {
+      font-size: 22px;
+      font-weight: 400;
+      margin: 0 0 10px;
+    }
+    .section { padding: 20px 2.5% 0; }
+    .paper-row td { padding: 20px 2.5%; }
+    .paper-img-cell { width: 25%; text-align: center; }
+    .paper-img-cell img {
+      width: 100%;
+      max-width: 180px;
+      border-radius: 4px;
+      background: #f2f2f2;
+    }
+    .paper-text-cell { width: 75%; }
+    .papertitle { font-size: 15px; font-weight: 700; }
+    .venue { font-style: italic; }
+    .footer { text-align: right; font-size: 12px; padding: 30px 2.5% 20px; color: #666; }
+    @media (max-width: 600px) {
+      .profile-cell, .bio-cell, .paper-img-cell, .paper-text-cell {
+        display: block; width: 100%; box-sizing: border-box;
+      }
+      .profile-cell img { max-width: 180px; }
+      .paper-img-cell img { max-width: 260px; }
+      .paper-row td { padding: 12px 2.5%; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ===================== INTRO ===================== -->
+  <table>
+    <tr>
+      <td class="bio-cell">
+        <p class="name">Idris Nechnech</p>
+        <p>
+          Hello! I am an MSc student in Electrical and Computer Engineering at Seoul National University,
+          advised by <a href="https://cml.snu.ac.kr/professor/">Jungwoo Lee</a>, and an MEng
+          student at Télécom SudParis, Institut Polytechnique de Paris.
+        </p>
+        <p>
+          <strong>I am actively looking for a PhD position starting Fall 2027</strong> in LLM alignment and
+          reinforcement learning, with an interest in long-horizon agentic tasks.
+        </p>
+        <p>
+          If you'd like to discuss or collaborate, feel free to reach out!
+        </p>
+        <p class="links">
+          <a href="mailto:inechnech@snu.ac.kr">Email</a> &nbsp;/&nbsp;
+          <a href="https://www.linkedin.com/in/idris-nechnech">LinkedIn</a> &nbsp;/&nbsp;
+          <a href="https://scholar.google.com/citations?user=JAIPj_AAAAAJ">Scholar</a> &nbsp;/&nbsp;
+          <a href="cv.pdf">CV</a>
+        </p>
+      </td>
+    </tr>
+  </table>
+
+  <!-- ===================== RESEARCH ===================== -->
+  <table>
+    <tr>
+      <td class="section">
+        <h2>Research Interests</h2>
+        <p>
+          My research focuses on <strong>post-training alignment for large language models</strong>,
+          spanning reinforcement learning with verifiable rewards (RLVR), mixed-policy learning, and
+          fine-grained, process-level feedback. I am interested in how richer training signals can make
+          learning more sample-efficient and reliable. Going forward, I aim to extend these methods to
+          <strong>long-horizon reasoning and agentic tasks</strong>.
+        </p>
+      </td>
+    </tr>
+  </table>
+
+  <!-- ===================== PUBLICATIONS ===================== -->
+  <table>
+    <tr>
+      <td class="section">
+        <h2>Publications</h2>
+      </td>
+    </tr>
+  </table>
+
+  <table>
+    <!-- Paper 1: Don't Filter, Fill -->
+    <tr class="paper-row">
+      <td class="paper-img-cell">
+        <img src="images/dont_filter_fill.png" alt="Framework overview of Dynamic Mixed-Policy GRPO">
+      </td>
+      <td class="paper-text-cell">
+        <span class="papertitle">Don’t Filter, Fill: Dynamic Mixed-Policy GRPO for Text-to-SQL</span>
+        <br>
+        <strong>Idris Nechnech</strong>, Sehwan Kim, Youssef Ennouri, Sangwoo Hong, Jungwoo Lee
+        <br>
+        <span class="venue">Currently under review</span>
+        <p style="margin-top:8px">
+          To address zero-variance groups in GRPO and provide a richer learning signal, we dynamically fill
+          on-policy groups with both positive and negative off-policy trajectories. A 3B model reaches
+          56.0% execution accuracy on the BIRD dev set.
+        </p>
+      </td>
+    </tr>
+
+    <!-- Paper 2: Step-KTOder -->
+    <tr class="paper-row">
+      <td class="paper-img-cell">
+        <img src="images/step_ktoder.png" alt="Framework overview of STEP-KTODER">
+      </td>
+      <td class="paper-text-cell">
+        <span class="papertitle">Function-Level Execution Feedback for Code Preference Optimization</span>
+        <br>
+        <strong>Idris Nechnech</strong>, Sehwan Kim, Jimin Seo, Yeongoon Kim, Minhae Oh, Sangwoo Hong, Jungwoo Lee
+        <br>
+        <span class="venue">EMNLP (Findings)</span>, 2026
+        <br>
+        <a href="https://github.com/inechnech/STEP-KTODER">github</a> /
+        <a href="https://arxiv.org/abs/2608.23632">arXiv</a>
+        <p style="margin-top:8px">
+          STEP-KTODER defines steps as module-level functions in decomposed multi-function programs and
+          assigns them binary correctness labels via automatically generated unit tests. Combining these
+          step-level labels with outcome-level feedback yields a stepwise KTO objective.
+        </p>
+      </td>
+    </tr>
+  </table>
+
+  <!-- ===================== FOOTER ===================== -->
+  <table>
+    <tr>
+      <td class="footer">
+        Template based on <a href="https://jonbarron.info/">Jon Barron's website</a>.
+      </td>
+    </tr>
+  </table>
+
+</div>
+</body>
+</html>
