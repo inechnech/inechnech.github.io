@@ -48,23 +48,20 @@
     }
     .section { padding: 20px 2.5% 0; }
     .paper-row td { padding: 20px 2.5%; }
-    .paper-img-cell { width: 25%; text-align: center; }
-    .paper-img-cell img {
+    .paper-fig {
+      display: block;
       width: 100%;
-      max-width: 180px;
-      border-radius: 4px;
-      background: #f2f2f2;
+      height: auto;
+      margin: 14px 0 12px;
+      border: 1px solid #e6e6e6;
+      border-radius: 6px;
+      background: #fff;
     }
-    .paper-text-cell { width: 75%; }
     .papertitle { font-size: 15px; font-weight: 700; }
     .venue { font-style: italic; }
     .footer { text-align: right; font-size: 12px; padding: 30px 2.5% 20px; color: #666; }
     @media (max-width: 600px) {
-      .profile-cell, .bio-cell, .paper-img-cell, .paper-text-cell {
-        display: block; width: 100%; box-sizing: border-box;
-      }
-      .profile-cell img { max-width: 180px; }
-      .paper-img-cell img { max-width: 260px; }
+      .bio-cell { display: block; width: 100%; box-sizing: border-box; }
       .paper-row td { padding: 12px 2.5%; }
     }
   </style>
@@ -127,16 +124,16 @@
   <table>
     <!-- Paper 1: Don't Filter, Fill -->
     <tr class="paper-row">
-      <td class="paper-img-cell">
-        <img src="images/dont_filter_fill.png" alt="Framework overview of Dynamic Mixed-Policy GRPO">
-      </td>
-      <td class="paper-text-cell">
+      <td>
         <span class="papertitle">Don’t Filter, Fill: Dynamic Mixed-Policy GRPO for Text-to-SQL</span>
         <br>
         <strong>Idris Nechnech</strong>, Sehwan Kim, Youssef Ennouri, Sangwoo Hong, Jungwoo Lee
         <br>
         <span class="venue">Currently under review</span>
-        <p style="margin-top:8px">
+        <a href="images/dont_filter_fill.png">
+          <img class="paper-fig" src="images/dont_filter_fill.png" alt="Framework overview of Dynamic Mixed-Policy GRPO">
+        </a>
+        <p>
           To address zero-variance groups in GRPO and provide a richer learning signal, we dynamically fill
           on-policy groups with both positive and negative off-policy trajectories. A 3B model reaches
           56.0% execution accuracy on the BIRD dev set.
@@ -146,10 +143,7 @@
 
     <!-- Paper 2: Step-KTOder -->
     <tr class="paper-row">
-      <td class="paper-img-cell">
-        <img src="images/step_ktoder.png" alt="Framework overview of STEP-KTODER">
-      </td>
-      <td class="paper-text-cell">
+      <td>
         <span class="papertitle">Function-Level Execution Feedback for Code Preference Optimization</span>
         <br>
         <strong>Idris Nechnech</strong>, Sehwan Kim, Jimin Seo, Yeongoon Kim, Minhae Oh, Sangwoo Hong, Jungwoo Lee
@@ -158,10 +152,38 @@
         <br>
         <a href="https://github.com/inechnech/STEP-KTODER">github</a> /
         <a href="https://arxiv.org/abs/2608.23632">arXiv</a>
-        <p style="margin-top:8px">
+        <a href="images/step_ktoder.png">
+          <img class="paper-fig" src="images/step_ktoder.png" alt="Framework overview of STEP-KTODER">
+        </a>
+        <p>
           STEP-KTODER defines steps as module-level functions in decomposed multi-function programs and
           assigns them binary correctness labels via automatically generated unit tests. Combining these
           step-level labels with outcome-level feedback yields a stepwise KTO objective.
+        </p>
+      </td>
+    </tr>
+
+    <!-- Paper 3: LR transfer for hybrid Transformer-SSM -->
+    <tr class="paper-row">
+      <td>
+        <span class="papertitle">Learning Rate Transfer for Hybrid Transformer-SSM Architectures</span>
+        <br>
+        Jimin Seo, Gyubok Lee, Yeonsik Jo, Kiwoong Yoo, Yeongoon Kim, Minhae Oh, Jin Woo Koo, Suhwan Kim,
+        Nakyung Lee, Minsik Seol, <strong>Idris Nechnech</strong>, Jaehyeon Kim, Giho Lee, Jungwoo Lee
+        <br>
+        <span class="venue">NeurIPS</span>, 2026
+        <br>
+        <a href="https://arxiv.org/abs/2610.01172">arXiv</a>
+        <a href="images/lr_transfer_hybrid.png">
+          <img class="paper-fig" src="images/lr_transfer_hybrid.png" alt="Coordinate checks and learning-rate transfer curves across widths for SP, naive muP and block-wise muP">
+        </a>
+        <p>
+          We show that the original &mu;P prescription with AdamW gives near-zero learning-rate transfer gap
+          for hybrid Transformer&ndash;SSM models across widths 256&ndash;2048 and depths 4&ndash;32, up to
+          billion-parameter scale, even though SSM blocks fall outside &mu;P's theory and fail the standard
+          coordinate check. We explain this through a two-condition decomposition: global update-to-weight
+          invariance from &mu;P, and local per-component balance from AdamW. The transfer also holds for
+          Nemotron-H, a production hybrid model.
         </p>
       </td>
     </tr>
