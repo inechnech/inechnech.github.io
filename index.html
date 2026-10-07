@@ -39,51 +39,27 @@
     }
     .section { padding: 20px 2.5% 0; }
 
-    /* ---------- Publications (Jon Barron / Sehwan layout) ---------- */
-    .paper-row td { padding: 20px 2.5%; }
-    .paper-img-cell { width: 25%; position: relative; }
-    .paper-text-cell { width: 75%; }
-
-    /* Thumbnail: a zoomed-in crop of the figure.
-       Change --focus on each figure to choose which part is shown (x% y%). */
-    .thumb {
-      display: block;
-      width: 100%;
-      max-width: 180px;
-      aspect-ratio: 4 / 3;
-      margin: 0 auto;
-      overflow: hidden;
-      border: 1px solid #e6e6e6;
-      border-radius: 4px;
-      background: #fff;
-    }
-    .thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: var(--focus, 50% 50%);
-      display: block;
-    }
-
-    /* Hover: full figure pops up, large, over the text */
-    .zoom-pop {
-      display: none;
-      position: absolute;
-      left: 95%;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 560px;
-      max-width: 75vw;
-      z-index: 20;
+    /* ---------- Publications (Jon Barron / Sehwan layout, uniform figure cards) ---------- */
+    .paper-row td { padding: 18px 2.5%; }
+    .paper-img-cell { width: 35%; }
+    .paper-text-cell { width: 65%; }
+    .fig-card {
+      aspect-ratio: 16 / 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       padding: 8px;
-      background: #fff;
-      border: 1px solid #ddd;
+      box-sizing: border-box;
+      background: #f6f7f9;
+      border: 1px solid #e8e8e8;
       border-radius: 6px;
-      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
-      pointer-events: none;
     }
-    .zoom-pop img { width: 100%; height: auto; display: block; }
-    .paper-img-cell:hover .zoom-pop { display: block; }
+    .fig-card img {
+      display: block;
+      width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
 
     .papertitle { font-size: 15px; font-weight: 700; }
     .venue { font-style: italic; }
@@ -94,9 +70,6 @@
       .bio-cell, .paper-img-cell, .paper-text-cell {
         display: block; width: 100%; box-sizing: border-box;
       }
-      .thumb { max-width: 100%; aspect-ratio: auto; }
-      .thumb img { height: auto; object-fit: contain; }
-      .zoom-pop, .paper-img-cell:hover .zoom-pop { display: none; }
       .paper-row td { padding: 10px 2.5%; }
     }
   </style>
@@ -137,10 +110,10 @@
       <td class="section">
         <h2>Research Interests</h2>
         <p>
-          My research focuses on <strong>post-training alignment for large language models</strong>,
+          My research focuses on <strong>post-training alignment for LLMs</strong>,
           spanning reinforcement learning with verifiable rewards (RLVR), mixed-policy learning, and
           fine-grained, process-level feedback. I am interested in how richer training signals can make
-          learning more sample-efficient and reliable. Going forward, I aim to extend these methods to
+          learning more sample-efficient and reliable. Going forward, I wish to extend these methods to
           <strong>long-horizon reasoning and agentic tasks</strong>.
         </p>
       </td>
@@ -160,10 +133,9 @@
     <!-- Paper 1: Don't Filter, Fill -->
     <tr class="paper-row">
       <td class="paper-img-cell">
-        <div class="thumb">
-          <img src="images/dont_filter_fill.png" style="--focus: 45% 75%;" alt="Framework overview of Dynamic Mixed-Policy GRPO">
+        <div class="fig-card">
+          <img src="images/dont_filter_fill.png" alt="Framework overview of Dynamic Mixed-Policy GRPO">
         </div>
-        <div class="zoom-pop"><img src="images/dont_filter_fill.png" alt=""></div>
       </td>
       <td class="paper-text-cell">
         <span class="papertitle">Don’t Filter, Fill: Dynamic Mixed-Policy GRPO for Text-to-SQL</span>
@@ -182,10 +154,9 @@
     <!-- Paper 2: Step-KTOder -->
     <tr class="paper-row">
       <td class="paper-img-cell">
-        <div class="thumb">
-          <img src="images/step_ktoder.png" style="--focus: 35% 45%;" alt="Framework overview of STEP-KTODER">
+        <div class="fig-card">
+          <img src="images/step_ktoder.png" alt="Framework overview of STEP-KTODER">
         </div>
-        <div class="zoom-pop"><img src="images/step_ktoder.png" alt=""></div>
       </td>
       <td class="paper-text-cell">
         <span class="papertitle">Function-Level Execution Feedback for Code Preference Optimization</span>
@@ -207,10 +178,9 @@
     <!-- Paper 3: LR transfer for hybrid Transformer-SSM -->
     <tr class="paper-row">
       <td class="paper-img-cell">
-        <div class="thumb">
-          <img src="images/lr_transfer_hybrid.png" style="--focus: 50% 85%;" alt="Learning-rate transfer curves across widths for SP, naive muP and block-wise muP">
+        <div class="fig-card">
+          <img src="images/lr_transfer_hybrid.png" alt="Learning-rate transfer curves across widths for SP, naive muP and block-wise muP">
         </div>
-        <div class="zoom-pop"><img src="images/lr_transfer_hybrid.png" alt=""></div>
       </td>
       <td class="paper-text-cell">
         <span class="papertitle">Learning Rate Transfer for Hybrid Transformer-SSM Architectures</span>
