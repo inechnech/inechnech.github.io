@@ -39,27 +39,18 @@
     }
     .section { padding: 20px 2.5% 0; }
 
-    /* ---------- Publications (Jon Barron / Sehwan layout, uniform figure cards) ---------- */
+    /* ---------- Publications (Jon Barron / Sehwan layout) ---------- */
     .paper-row td { padding: 18px 2.5%; }
-    .paper-img-cell { width: 35%; }
-    .paper-text-cell { width: 65%; }
-    .fig-card {
-      aspect-ratio: 16 / 10;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 8px;
-      box-sizing: border-box;
-      background: #f6f7f9;
-      border: 1px solid #e8e8e8;
-      border-radius: 6px;
-    }
+    .paper-img-cell { width: 40%; }
+    .paper-text-cell { width: 60%; }
     .fig-card img {
       display: block;
       width: 100%;
-      max-height: 100%;
-      object-fit: contain;
+      height: auto;
+      margin: 0 auto;
     }
+    /* Taller figure: kept at its previous size so the wide figures can be larger */
+    .fig-card.fig-narrow img { width: 87.5%; }
 
     .papertitle { font-size: 15px; font-weight: 700; }
     .venue { font-style: italic; }
@@ -110,10 +101,10 @@
       <td class="section">
         <h2>Research Interests</h2>
         <p>
-          My research focuses on <strong>post-training alignment for LLMs</strong>,
+          My research focuses on <strong>post-training alignment for large language models</strong>,
           spanning reinforcement learning with verifiable rewards (RLVR), mixed-policy learning, and
           fine-grained, process-level feedback. I am interested in how richer training signals can make
-          learning more sample-efficient and reliable. Going forward, I wish to extend these methods to
+          learning more sample-efficient and reliable. Going forward, I aim to extend these methods to
           <strong>long-horizon reasoning and agentic tasks</strong>.
         </p>
       </td>
@@ -154,7 +145,7 @@
     <!-- Paper 2: Step-KTOder -->
     <tr class="paper-row">
       <td class="paper-img-cell">
-        <div class="fig-card">
+        <div class="fig-card fig-narrow">
           <img src="images/step_ktoder.png" alt="Framework overview of STEP-KTODER">
         </div>
       </td>
