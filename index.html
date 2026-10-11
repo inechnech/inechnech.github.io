@@ -51,6 +51,8 @@
     }
     /* Taller figure: kept at its previous size so the wide figures can be larger */
     .fig-card.fig-narrow img { width: 87.5%; }
+    /* Tall plot: shown smaller so its row matches the others */
+    .fig-card.fig-small img { width: 65%; }
 
     .papertitle { font-size: 15px; font-weight: 700; }
     .venue { font-style: italic; }
@@ -166,30 +168,29 @@
       </td>
     </tr>
 
-    <!-- Paper 3: When offloading backfires -->
+    <!-- Paper 3: When Offloading Backfires -->
     <tr class="paper-row">
       <td class="paper-img-cell">
-        <div class="fig-card fig-narrow">
-          <img src="images/when_offloading_backfires.png" alt="LLM rate change">
+        <div class="fig-card fig-small">
+          <img src="images/when_offloading_backfires.png" alt="LLM rate change against same-precision GPU across partitions">
         </div>
       </td>
       <td class="paper-text-cell">
         <span class="papertitle">When Offloading Backfires: Service-Conditioned Evaluation of Heterogeneous Edge Inference</span>
         <br>
-        Youssef Ennouri, <strong>Idris Nechnech<strong>, Soonhoi Ha
+        Youssef Ennouri, <strong>Idris Nechnech</strong>, Soonhoi Ha
         <br>
-        <span class="venue">Currently under review</span>, 2026
-        <br>
+        <span class="venue">Currently under review</span>
         <p class="paper-desc">
           We show that saturation benchmarks misreport edge accelerator offloading, flipping apparent GPU
-          capacity gains into throughput losses under equal vision work. To address this confound, we propose
+          capacity gains into throughput losses under equal vision work[cite: 2]. To address this confound, we propose
           a service-conditioned evaluation framework that decouples saturated capacity, equal-work impact,
-          and tail-latency deadline admissibility.
+          and tail-latency deadline admissibility[cite: 2].
         </p>
       </td>
     </tr>
 
-    <!-- Paper 4: LR transfer for hybrid Transformer-SSM -->
+    <!-- Paper 4: LR Transfer for Hybrid Transformer-SSM -->
     <tr class="paper-row">
       <td class="paper-img-cell">
         <div class="fig-card">
