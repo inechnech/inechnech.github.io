@@ -31,7 +31,15 @@
     }
     p { line-height: 1.55; margin: 0 0 12px; }
     .links { text-align: center; }
-    .bio-cell { width: 100%; padding: 2.5%; }
+    .bio-cell { width: 63%; padding: 2.5%; }
+    .profile-cell { width: 37%; padding: 2.5%; text-align: center; }
+    .profile-cell img {
+      width: 100%;
+      max-width: 220px;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 50%;
+    }
     h2 {
       font-size: 22px;
       font-weight: 400;
@@ -60,10 +68,11 @@
     .footer { text-align: right; font-size: 12px; padding: 30px 2.5% 20px; color: #666; }
 
     @media (max-width: 600px) {
-      .bio-cell, .paper-img-cell, .paper-text-cell {
+      .bio-cell, .profile-cell, .paper-img-cell, .paper-text-cell {
         display: block; width: 100%; box-sizing: border-box;
       }
       .paper-row td { padding: 10px 2.5%; }
+      .profile-cell img { max-width: 180px; }
     }
   </style>
 </head>
@@ -93,6 +102,9 @@
           <a href="https://scholar.google.com/citations?user=JAIPj_AAAAAJ">Scholar</a> &nbsp;/&nbsp;
           <a href="https://drive.google.com/file/d/124eU0eue02keE_xS3nB5QgT5KmlHzncW/view?usp=sharing" target="_blank" rel="noopener noreferrer">CV</a>
         </p>
+      </td>
+      <td class="profile-cell">
+        <img src="images/idris.jpg" alt="Idris Nechnech presenting at EMNLP 2026">
       </td>
     </tr>
   </table>
@@ -178,7 +190,7 @@
       <td class="paper-text-cell">
         <span class="papertitle">When Offloading Backfires: Service-Conditioned Evaluation of Heterogeneous Edge Inference</span>
         <br>
-        Youssef Ennouri, <strong>Idris Nechnech</strong>, Soonhoi Ha
+        Youssef Ennouri, Youngchul Yoon, <strong>Idris Nechnech</strong>, Soonhoi Ha
         <br>
         <span class="venue">Currently under review</span>
         <p class="paper-desc">
